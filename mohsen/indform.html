@@ -1,0 +1,236 @@
+<!-- @format -->
+
+<html>
+  <head>
+    <title>mohsen</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      body {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.4) 50%
+          ),
+          url(pattern.png);
+        background-position: center;
+        background-size: contain;
+        height: 100px;
+        overflow: hidden;
+      }
+      .form {
+        width: 250px;
+        height: 330px;
+        color: #fff;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 50%,
+          rgba(0, 0, 0, 0.8) 50%
+        );
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px 25px;
+        border-radius: 10px;
+      }
+      .form h1 {
+        width: 220px;
+        text-align: center;
+        padding-left: 11px;
+        font-size: 35px;
+        color: #66ff00;
+        margin-bottom: 20px;
+      }
+      .form p {
+        padding-bottom: -15px;
+      }
+      .form input {
+        width: 100%;
+        height: 35px;
+        padding-top: 5px;
+        margin-bottom: 30px;
+        background: transparent;
+        border-bottom: 1px solid #fff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: #fff;
+        outline: none;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+      .form input[type="submit"] {
+        width: 60%;
+        margin-left: 50px;
+        border: none;
+        height: 40px;
+        color: #000;
+        background: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 15px;
+      }
+      .form input[type="submit"]:hover {
+        cursor: pointer;
+        background: #66ff00;
+        color: #fff;
+        font-weight: bold;
+      }
+      .bg-item li {
+        position: absolute;
+        bottom: -150px;
+        list-style: none;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: bg-animation 25s infinite;
+        transition-timing-function: linear;
+      }
+      .bg-item li:nth-child(1) {
+        left: 10%;
+      }
+      .bg-item li:nth-child(2) {
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 3s;
+      }
+      .bg-item li:nth-child(3) {
+        left: 80%;
+        width: 150px;
+        height: 150px;
+        animation-duration: 50s;
+      }
+      .bg-item li:nth-child(4) {
+        left: 60%;
+        animation-delay: 4s;
+      }
+      .bg-item li:nth-child(5) {
+        left: 20%;
+        width: 60px;
+        height: 60px;
+      }
+      .bg-item li:nth-child(6) {
+        left: 85%;
+        animation-delay: 2s;
+      }
+      .bg-item li:nth-child(7) {
+        left: 40%;
+        animation-delay: 5s;
+      }
+      .bg-item li:nth-child(8) {
+        left: 30%;
+        width: 150px;
+        height: 150px;
+      }
+      .bg-item li:nth-child(9) {
+        left: 55%;
+        animation-delay: 7s;
+      }
+      .bg-item li:nth-child(10) {
+        left: 90%;
+        animation-delay: 4s;
+      }
+      @keyframes bg-animation {
+        0% {
+          transform: translateY(300px);
+        }
+        100% {
+          transform: translateY(-900px) rotate(600deg);
+        }
+      }
+      .saeat {
+        width: 245px;
+        height: 70px;
+        background: rgb(0, 0, 0, 0.8);
+        border-radius: 15px;
+        position: relative;
+        top: 55%;
+        left: 41.25%;
+      }
+      .saeat div {
+        float: left;
+        width: calc(100% / 3);
+        color: #66ff00;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 24px;
+      }
+    </style>
+    <script>
+      function saeat() {
+        var date = new Date();
+        document.getElementById("hour").innerHTML = date.getHours();
+        document.getElementById("minute").innerHTML = date.getMinutes();
+        document.getElementById("second").innerHTML = date.getSeconds();
+      }
+      setInterval(saeat, 1000);
+    </script>
+    <body>
+      <div class="saeat">
+        <div id="hour">00</div>
+        <div id="minute">00</div>
+        <div id="second">00</div>
+      </div>
+    </body>
+  </head>
+  <body>
+    <script>
+      function myfu() {
+        var x = document.getElementById("pass");
+
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+
+      function validata() {
+        var password = document.getElementById("pass");
+        var length = document.getElementById("length ");
+
+        if (password.value.length >= 8) {
+          alert("خوش امدید به سایت خودمونی");
+          alert("شما  سوال  درست پاسخ دادید");
+          window.location.replace("index.html");
+          return false;
+        } else {
+          alert("پسورد کمتر از 8 نباشد");
+        }
+      }
+    </script>
+    <div class="form">
+      <h1>ورود به سایت</h1>
+      <p>Username :</p>
+      <input type="text" name="" placeholder="Name Here" />
+      <p>password :</p>
+      <input type="password" name="" placeholder="Password Here" id="pass" />
+      <input type="checkbox" onclick="myfu()" />
+      <section>
+        <a href="index.html" target="_blank"></a>
+      </section>
+      <input type="submit" name="" value="ورود" onclick="validata()" />
+    </div>
+    <div>
+      <p id="length"></p>
+    </div>
+    <div>
+      <ul class="bg-item">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>

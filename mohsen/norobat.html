@@ -1,0 +1,33 @@
+<!-- @format -->
+
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var allQuestions = [
+        { question: "5 * 6 =", answer: 30 },
+        { question: "4 * 2 =", answer: 8 },
+      ];
+      var userScore = 0;
+      for (var i = 0; i < allQuestions.length; i++) {
+        var questionPrompt = prompt(allQuestions[i].question);
+        if (questionPrompt == allQuestions[i].answer) {
+          userScore++;
+          alert(
+            "شما" +
+              userScore +
+              "سوال از" +
+              allQuestions.length +
+              " سوال درست پاسخ دادیدورباط نیستی"
+          );
+          window.location.replace("indform.html");
+        } else if (questionPrompt != allQuestions[i].answer) {
+          alert("شما سوال اشتباه جواب دادید رباط هستی");
+          continue;
+        }
+      }
+    </script>
+  </body>
+</html>
